@@ -1,0 +1,3 @@
+C:/Users/isaac/CLionProjects/optionalTest/cmake-build-debug/CMakeFiles/optionalTest.dir
+C:/Users/isaac/CLionProjects/optionalTest/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/isaac/CLionProjects/optionalTest/cmake-build-debug/CMakeFiles/rebuild_cache.dir

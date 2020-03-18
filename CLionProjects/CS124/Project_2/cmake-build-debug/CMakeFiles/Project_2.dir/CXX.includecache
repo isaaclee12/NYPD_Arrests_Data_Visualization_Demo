@@ -1,0 +1,36 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/isaac/CLionProjects/Project_2/Node.h
+
+C:/Users/isaac/CLionProjects/Project_2/Project.h
+fstream
+-
+iostream
+-
+string
+-
+vector
+-
+
+C:/Users/isaac/CLionProjects/Project_2/Queue.h
+
+C:/Users/isaac/CLionProjects/Project_2/Stack.h
+
+C:/Users/isaac/CLionProjects/Project_2/main.cpp
+Node.h
+C:/Users/isaac/CLionProjects/Project_2/Node.h
+Stack.h
+C:/Users/isaac/CLionProjects/Project_2/Stack.h
+Project.h
+C:/Users/isaac/CLionProjects/Project_2/Project.h
+Queue.h
+C:/Users/isaac/CLionProjects/Project_2/Queue.h
+iostream
+-
+

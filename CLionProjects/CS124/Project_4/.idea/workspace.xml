@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
+    <generated>
+      <config projectName="Project_4" targetName="Project_4" />
+    </generated>
+  </component>
+  <component name="CMakeSettings" AUTO_RELOAD="true">
+    <configurations>
+      <configuration PROFILE_NAME="Debug" CONFIG_NAME="Debug" />
+    </configurations>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="90d43674-6040-4131-ad9e-b130482cfc61" name="Default Changelist" comment="" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
+  <component name="ProjectId" id="1ShouA7s0dpVzFwW0qXvtgdR2kP" />
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Project_3" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="configurable.group.editor" />
+    <property name="settings.editor.splitter.proportion" value="0.2281746" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="Project_4" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Project_4" TARGET_NAME="Project_4" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Project_4" RUN_TARGET_NAME="Project_4">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="90d43674-6040-4131-ad9e-b130482cfc61" name="Default Changelist" comment="" />
+      <created>1572025408677</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1572025408677</updated>
+      <workItem from="1572025410857" duration="475000" />
+      <workItem from="1572322951475" duration="914000" />
+      <workItem from="1572323870253" duration="316000" />
+      <workItem from="1572388385514" duration="4360000" />
+      <workItem from="1572392768564" duration="43000" />
+      <workItem from="1572392830388" duration="818000" />
+      <workItem from="1572454945011" duration="833000" />
+      <workItem from="1573320502389" duration="3911000" />
+      <workItem from="1573339723148" duration="7702000" />
+      <workItem from="1574205917662" duration="251000" />
+      <workItem from="1575437831891" duration="39000" />
+      <workItem from="1575596882514" duration="106000" />
+      <workItem from="1575597893590" duration="1804000" />
+      <workItem from="1575604880631" duration="283000" />
+      <workItem from="1575605676672" duration="1316000" />
+      <workItem from="1575615730340" duration="642000" />
+      <workItem from="1583189057891" duration="3606000" />
+      <workItem from="1583270816847" duration="676000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.csv" />
+  </component>
+</project>

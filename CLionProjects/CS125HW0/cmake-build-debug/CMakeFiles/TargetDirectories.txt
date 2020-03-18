@@ -1,0 +1,3 @@
+C:/Users/isaac/CLionProjects/CS125HW0/cmake-build-debug/CMakeFiles/CS125HW0.dir
+C:/Users/isaac/CLionProjects/CS125HW0/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/isaac/CLionProjects/CS125HW0/cmake-build-debug/CMakeFiles/rebuild_cache.dir
