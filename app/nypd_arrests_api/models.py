@@ -9,7 +9,7 @@ class Arrests(models.Model):
     arrest_key = models.PositiveBigIntegerField()
 
     # `ARREST_DATE` DATE,
-    arrest_date = models.DateField()
+    arrest_date = models.CharField(max_length=10)
 
     # `PD_CD` SMALLINT,
     pd_cd = models.PositiveSmallIntegerField(null=True, blank=True)
@@ -75,7 +75,7 @@ class Arrests(models.Model):
 
 
     # `ARREST_PRECINCT` TINYINT,
-    arrest_precint = models.PositiveSmallIntegerField()
+    arrest_precinct = models.PositiveSmallIntegerField()
 
     # `JURISDICTION_CODE` SMALLINT,
     jurisdiction_code = models.PositiveSmallIntegerField()
@@ -119,3 +119,6 @@ class Arrests(models.Model):
     # `Lon_Lat` VARCHAR(150)
     long_lat = models.CharField(max_length=150)
 
+class TestModel(models.Model):
+    name = models.CharField(max_length=100)
+    age = models.IntegerField()
