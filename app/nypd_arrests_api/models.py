@@ -3,6 +3,8 @@ from django.db import models
 # Create your models here.
 class Arrests(models.Model):
 
+    # id = models.AutoField(primary_key=True)
+
     # `ARREST_KEY` BIGINT,
     arrest_key = models.PositiveBigIntegerField()
 
@@ -116,3 +118,4 @@ class Arrests(models.Model):
 
     # `Lon_Lat` VARCHAR(150)
     long_lat = models.CharField(max_length=150)
+
