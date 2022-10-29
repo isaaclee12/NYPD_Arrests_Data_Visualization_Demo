@@ -1,9 +1,10 @@
 from datetime import date, datetime, timedelta
 import csv
+import itertools
 
 def initialize_results_csv():
     fname = './nypd_arrests_results.csv'
-    with open(fname, 'w') as f:
+    with open(fname, 'w') as f:testData
         header = "date,manhattan,kings,queens,bronx,staten_island\n"
         f.write(header)
 
@@ -21,23 +22,32 @@ def initialize_results_csv():
 def process_data():
     fname = '../NYPD_Arrests_Data__Historic_.csv'
     with open(fname, 'r') as f:
-
-    # for item in csv:
-        csvfile = csv.reader(f)
-
-        start = datetime.now()
-
-        # for i in range(1,100):
-            # print(i)
         ct = 0
-        for line in csvfile:
-            ct += 1
-            print("Read", ct, "rows")
+        for line in f:
+            print(line.strip(),"YUH")
+            ct+=1
+            if ct > 10:
+                break
+        # with open('./nypd_arrests_results.csv', 'w') as g:
 
-        end = datetime.now()
+        #     # for item in csv:
+        #     csvfile = csv.reader(f)
 
-        runtime = end - start
-        print("RUNTIME:", runtime)
+        #     start = datetime.now()
+
+        #     ct = 0
+        #     # itertools slices off just the 1st 1000
+        #     for line in itertools.islice(csvfile,1000):
+        #         ct += 1
+        #         # Remove fluff
+        #         out_string = str(line).replace('[','').replace(']','').replace('\'','').replace(', ',',')+"\n"
+        #         g.write(out_string)
+        #         print("Read", ct, "rows")
+
+        #     end = datetime.now()
+
+        #     runtime = end - start
+        #     print("RUNTIME:", runtime)
 
 
 
