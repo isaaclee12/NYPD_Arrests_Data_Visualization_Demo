@@ -122,3 +122,17 @@ class Arrests(models.Model):
 class TestModel(models.Model):
     name = models.CharField(max_length=100)
     age = models.IntegerField()
+
+"""BoroughHeatMap: A day by day count of the number of crimes in each borough.
+Assuming the model contains records from 1/1/06 to 12/31/21, there only be
+5,475 entries, which is far easier to process than the 5+ million in the 
+raw data. This data will be used for a day to day visualization
+of arrests in each borough."""
+# TODO: Push this model to the table, then query data to it on the backend to speed things up
+class BoroughHeatMap(models.Model):
+    arrest_date = models.CharField(max_length=10, null=True)
+    manhattan_arrests = models.PositiveSmallIntegerField(null=True)
+    kings_arrests = models.PositiveSmallIntegerField(null=True)
+    queens_arrests = models.PositiveSmallIntegerField(null=True)
+    bronx_arrests = models.PositiveSmallIntegerField(null=True)
+    staten_island_arrests = models.PositiveSmallIntegerField(null=True)
