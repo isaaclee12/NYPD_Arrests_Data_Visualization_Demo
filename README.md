@@ -1,7 +1,10 @@
-In progress
+In progress, Note to self: everything should be snake case
 
-Note to self: everything should be snake case
-topojson of nyc boroughs from: https://github.com/HarryBirtles/NYC-Maps-and-Data
+
+## Data Sources:
+- NYPD Arrests Data (Historic): https://data.cityofnewyork.us/Public-Safety/NYPD-Arrests-Data-Historic-/8h9b-rp9u
+- Topojson of NYC Boroughs: https://github.com/HarryBirtles/NYC-Maps-and-Data
+
 # TODO:
 
 ### DATABASE CHANGES:
@@ -32,13 +35,14 @@ topojson of nyc boroughs from: https://github.com/HarryBirtles/NYC-Maps-and-Data
     - Established Boilerplate
     - Initiated Models and Database
 
-- 10/25/2022 (9am-2pm)
+- 10/25/2022 (5 hours)
     - Configured models, serializers, viewsets, and sqlite3 database
     - Began seeking better "big" data analysis solutions
 
--10/28 (8pm-??)
-    -
-
+- 10/28/2022 (4 hours)
+    - Fiddled with big data storage and analysis
+    - Hit roadblocks with everything. Great!
+    
 ---
 
 # How to:

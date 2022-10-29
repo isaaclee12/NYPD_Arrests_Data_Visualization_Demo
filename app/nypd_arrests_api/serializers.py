@@ -40,9 +40,9 @@ class TestSerializer(serializers.ModelSerializer):
                 "age"
                 )
 
-class TestSerializer(serializers.ModelSerializer):
+class BoroughHeatMapSerializer(serializers.ModelSerializer):
     class Meta:
-        model = TestModel
+        model = BoroughHeatMap
         fields = ("arrest_date", 
                 "manhattan_arrests", 
                 "kings_arrests", 

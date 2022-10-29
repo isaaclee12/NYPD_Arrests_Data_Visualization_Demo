@@ -19,7 +19,7 @@ class BarChart extends Component {
             .attr('y', 0) // keep y pos at 0
             .attr('width', 25) // set wth and ht
             .attr('height', (d,i) => d) // map data's values to each bar's height by initing then pulling the d var
-            .attr('fill', green) // set inside color to green
+            .attr('fill', 'green') // set inside color to green
     }
 }
 

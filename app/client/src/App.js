@@ -1,12 +1,15 @@
 import React from 'react'
 import BarChart from './components/map'
+import {Route, Routes} from 'react-router-dom'
 
 function App() {
 
   return (
     <div className="App">
 
-      <BarChart/>
+      <p>asdfasdf</p>
+
+      <BarChart/> 
 
       <nav>
         <a href="/">Heatmap</a>

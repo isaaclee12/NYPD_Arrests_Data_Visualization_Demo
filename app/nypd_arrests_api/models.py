@@ -9,7 +9,7 @@ class Arrests(models.Model):
     arrest_key = models.PositiveBigIntegerField()
 
     # `ARREST_DATE` DATE,
-    arrest_date = models.CharField(max_length=10)
+    arrest_date = models.DateField(max_length=10)
 
     # `PD_CD` SMALLINT,
     pd_cd = models.PositiveSmallIntegerField(null=True, blank=True)
@@ -130,7 +130,7 @@ raw data. This data will be used for a day to day visualization
 of arrests in each borough."""
 # TODO: Push this model to the table, then query data to it on the backend to speed things up
 class BoroughHeatMap(models.Model):
-    arrest_date = models.CharField(max_length=10, null=True)
+    arrest_date = models.DateField(max_length=10)
     manhattan_arrests = models.PositiveSmallIntegerField(null=True)
     kings_arrests = models.PositiveSmallIntegerField(null=True)
     queens_arrests = models.PositiveSmallIntegerField(null=True)

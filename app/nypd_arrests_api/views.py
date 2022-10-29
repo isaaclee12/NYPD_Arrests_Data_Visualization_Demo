@@ -6,6 +6,11 @@ from rest_framework.response import Response
 from .models import Arrests, TestModel
 from .serializers import ArrestsSerializer, TestSerializer
 
+import pandas as pd
+
+from django.db import connection
+
+
 class ArrestsViewSet(viewsets.ModelViewSet):
 
     queryset = Arrests.objects.filter(perp_race__exact="BLACK")[10:]
@@ -23,12 +28,17 @@ class ArrestsViewSet(viewsets.ModelViewSet):
 
 class TestViewSet(viewsets.ModelViewSet):
 
-    queryset = TestModel.objects.all()
+    # queryset = TestModel.objects.all()
+
+    queryset = str(TestModel.objects.all().query)
+    df = pd.read_sql_query(queryset, connection)
+
+    df.head()
 
     http_method_names = ['get']
 
     def list(self, request):
 
-        serializer = TestSerializer(self.queryset, many=True)
+        # serializer = TestSerializer(self.queryset, many=True)
 
-        return Response(serializer.data)
+        return Response(self.df) #serializer.data)

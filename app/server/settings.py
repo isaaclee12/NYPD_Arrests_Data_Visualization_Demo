@@ -83,11 +83,27 @@ WSGI_APPLICATION = 'server.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
+
+# Strip mysql password
+with open(os.path.join(BASE_DIR, '../../secret_key_nypd_mysql.txt')) as f:
+    SQL_PASSWORD = f.read().strip()
+
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, '../../nypd_arrests_db.sqlite3')
-    }
+    'default': {  
+        'ENGINE': 'django.db.backends.mysql',  
+        'NAME': 'nypd_arrests_data',  
+        'USER': 'root',  
+        'PASSWORD': SQL_PASSWORD,  
+        'HOST': '127.0.0.1',  
+        'PORT': '3306',  
+        'OPTIONS': {  
+            'init_command': "SET sql_mode='STRICT_TRANS_TABLES'"  
+        }  
+    }  
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.sqlite3',
+    #     'NAME': os.path.join(BASE_DIR, '../../nypd_arrests_db.sqlite3')
+    # }
 }
 
 
