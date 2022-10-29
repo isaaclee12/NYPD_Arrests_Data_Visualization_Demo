@@ -12,13 +12,13 @@ class Arrests(models.Model):
     arrest_date = models.DateField(max_length=10)
 
     # `PD_CD` SMALLINT,
-    pd_cd = models.PositiveSmallIntegerField(null=True, blank=True)
+    pd_cd = models.IntegerField(null=True, blank=True)
 
     # `PD_DESC` VARCHAR(200),
     pd_desc = models.CharField(max_length=200, null=True, blank=True)
 
     # `KY_CD` SMALLINT,
-    ky_cd = models.PositiveSmallIntegerField(null=True, blank=True)
+    ky_cd = models.IntegerField(null=True, blank=True)
 
     # `OFNS_DESC` VARCHAR(200),
     ofns_desc = models.CharField(max_length=200, null=True, blank=True)
@@ -75,10 +75,10 @@ class Arrests(models.Model):
 
 
     # `ARREST_PRECINCT` TINYINT,
-    arrest_precinct = models.PositiveSmallIntegerField()
+    arrest_precinct = models.IntegerField()
 
     # `JURISDICTION_CODE` SMALLINT,
-    jurisdiction_code = models.PositiveSmallIntegerField()
+    jurisdiction_code = models.IntegerField()
 
     # `AGE_GROUP` VARCHAR(10),
     age_group = models.CharField(max_length=10)
@@ -131,8 +131,8 @@ of arrests in each borough."""
 # TODO: Push this model to the table, then query data to it on the backend to speed things up
 class BoroughHeatMap(models.Model):
     arrest_date = models.DateField(max_length=10)
-    manhattan_arrests = models.PositiveSmallIntegerField(null=True)
-    kings_arrests = models.PositiveSmallIntegerField(null=True)
-    queens_arrests = models.PositiveSmallIntegerField(null=True)
-    bronx_arrests = models.PositiveSmallIntegerField(null=True)
-    staten_island_arrests = models.PositiveSmallIntegerField(null=True)
+    manhattan_arrests = models.IntegerField(null=True)
+    kings_arrests = models.IntegerField(null=True)
+    queens_arrests = models.IntegerField(null=True)
+    bronx_arrests = models.IntegerField(null=True)
+    staten_island_arrests = models.IntegerField(null=True)

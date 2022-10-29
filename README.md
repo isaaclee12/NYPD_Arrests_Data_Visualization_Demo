@@ -43,6 +43,9 @@ In progress, Note to self: everything should be snake case
     - Fiddled with big data storage and analysis
     - Hit roadblocks with everything. Great!
     
+- 10/29/2022 (11am-)
+
+
 ---
 
 # How to:
