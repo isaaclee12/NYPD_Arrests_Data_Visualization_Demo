@@ -1,7 +1,7 @@
 In progress
 
 Note to self: everything should be snake case
-
+topojson of nyc boroughs from: https://github.com/HarryBirtles/NYC-Maps-and-Data
 # TODO:
 
 ### DATABASE CHANGES:
@@ -32,11 +32,12 @@ Note to self: everything should be snake case
     - Established Boilerplate
     - Initiated Models and Database
 
-- 10/25/2022 (9am-)
+- 10/25/2022 (9am-2pm)
     - Configured models, serializers, viewsets, and sqlite3 database
     - Began seeking better "big" data analysis solutions
 
-
+-10/28 (8pm-??)
+    -
 
 ---
 
