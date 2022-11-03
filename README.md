@@ -1,6 +1,9 @@
 # NYPD_Arrests_Data_Visualization_Demo
 
-## (Project currently in development) A data visualization of NYPD's historic arrests data. Made with MySQL, Django, React, and D3.js
+## (Project currently in development) 
+
+## A data visualization of NYPD's historic arrests data. Made with MySQL, Django, React, and D3.js
+
 ## Data Sources:
 - NYPD Arrests Data (Historic): https://data.cityofnewyork.us/Public-Safety/NYPD-Arrests-Data-Historic-/8h9b-rp9u
 - Topojson of NYC Boroughs: https://github.com/HarryBirtles/NYC-Maps-and-Data
