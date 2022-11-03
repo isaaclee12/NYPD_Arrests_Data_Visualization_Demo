@@ -1,6 +1,6 @@
-In progress, Note to self: everything should be snake case
+# NYPD_Arrests_Data_Visualization_Demo
 
-
+## (Project currently in development) A data visualization of NYPD's historic arrests data. Made with MySQL, Django, React, and D3.js
 ## Data Sources:
 - NYPD Arrests Data (Historic): https://data.cityofnewyork.us/Public-Safety/NYPD-Arrests-Data-Historic-/8h9b-rp9u
 - Topojson of NYC Boroughs: https://github.com/HarryBirtles/NYC-Maps-and-Data
@@ -43,8 +43,13 @@ In progress, Note to self: everything should be snake case
     - Fiddled with big data storage and analysis
     - Hit roadblocks with everything. Great!
     
-- 10/29/2022 (11am-)
+- 10/29/2022 (4 hours)
+    - Finally figured out MySQL
+    - Got queries to operate correctly
 
+- 11/03/2022 (3 hours)
+    - Made incredible progress in MySQL
+    - Will soon be finalizing reduced dataset for visualization
 
 ---
 
