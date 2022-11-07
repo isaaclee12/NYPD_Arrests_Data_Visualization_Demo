@@ -3,8 +3,8 @@ from django.shortcuts import render
 from rest_framework import viewsets
 from rest_framework.response import Response
 
-from .models import Arrests, TestModel
-from .serializers import ArrestsSerializer, TestSerializer
+from .models import Arrests, TestModel, BoroughHeatMap
+from .serializers import ArrestsSerializer, TestSerializer, BoroughHeatMapSerializer
 
 import pandas as pd
 
@@ -42,3 +42,19 @@ class TestViewSet(viewsets.ModelViewSet):
         # serializer = TestSerializer(self.queryset, many=True)
 
         return Response(self.df) #serializer.data)
+
+class BoroughHeatMapViewSet(viewsets.ModelViewSet):
+
+    queryset = BoroughHeatMap.objects.all()
+
+    http_method_names = ['get']
+
+    def list(self, request):
+
+        serializer = BoroughHeatMapSerializer(self.queryset, many=True)
+
+        print(serializer.data)
+
+        # Return to front end
+        return Response(serializer.data)
+
