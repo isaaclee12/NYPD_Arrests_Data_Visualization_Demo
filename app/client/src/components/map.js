@@ -1,57 +1,47 @@
-import React, {Component} from 'react'
+import React, {Component, useState, useEffect} from 'react'
 import * as d3 from 'd3';
 
 const Map = () => {
 
-    // d3 boilerplate
-    // let margin = {top: 0, bottom: 0, left: 0, right: 0},
-    //     height = 400 - margin.top - margin.bottom,
-    //     width = 800 - margin.left - margin.right;
+    const [mapData, setMapData] = useState([]);
 
-    // create svg object
-    var width = 1280, height = 800;
+    useEffect(() => {
+        d3.json("NYC_Boroughs.json") //("https://github.com/HarryBirtles/NYC-Maps-and-Data/blob/master/NYC_Boroughs.topojson")
+        .then((data) => {
+            setMapData(data);
+        })
+        .catch((err) => {
+            console.log("Error when loading map:", err);
+        });
+    }, [])
 
-    var svg = d3.select("#map").append("svg")
-            .attr("width", width)
-            .attr("height", height);
 
-    var projection = d3.geoPath()
-            .azimuthal()
-            .mode("equidistant")
-            .origin([-98, 38])
-            .scale(1500)
-            .translate([640, 360]);
+    // set up projection stuff for the svg
+    const setMapProjection = function(mapData) {
+        // use the geoAlbers map projection
+        const projection = d3.geoAlbers();
+        // adjust projection to fit area of map canvas
+        projection
+            .precision(0)
+            .rotate([90, 0, 0])
+            .fitExtent(
+            [
+                [0, 0],
+                [960, 480],
+            ],
+            mapData
+            );
+        return projection;
+        };
 
-    var path = d3.geoPath()
-            .projection(projection);
+    //set map data to d3
+    const path = d3.geoPath().projection(setMapProjection(mapData.data));
 
-    var borough = svg.append("svg:g")
-        .attr("id", "Borough");
+    console.log(path);
 
-    d3.json("NYC_Boroughs.json", function(error, nyc) {
-        if (error) return console.error(error);
-        borough.selectAll("path").data(nyc.features)
-                .enter().append("svg:path")
-                .attr("d",path)
-                .attr("class", function(d){
-                    return "class" + d.id;
-                })
-                .style("fill", function(){
-                    return "hsl(" + Math.random() * 360 + ",60%,30%)";
-                });
-    });
-
-    // test object
-    // let map = d3.select("#map") // select all html objects with ID map
-        // .append("p")
-        // .text("test")
-
-    // read in topojson
-        // d3.json("NYC_Boroughs.json", function (data) {
-        //     console.log(data);
-        //     map.append(data);
-        // });
-        // .await(ready)
+    d3.select("#map")
+    .append(path)
+    
 
     return( 
         <div id="map">
