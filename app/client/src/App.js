@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react'
-import BarChart from './components/map'
+import Map from './components/map'
 import {Route, Routes} from 'react-router-dom'
 
 function App() {
@@ -30,14 +30,13 @@ function App() {
   return (
     <div className="App">
       
-      {/* <BarChart/>  */}
+      <Map/>
 
-      <nav class="py-10">
+      {/* <nav class="py-10">
         <a href="/" class="ml-10">Heatmap</a>
         <a href="/" class="ml-10">About</a>
       </nav>
 
-      {/* TABLE */}
       <div>
         <table class="min-w-full">
             <thead class="border-b">
@@ -63,7 +62,7 @@ function App() {
               )}
             </tbody>
         </table>
-      </div>
+      </div> */}
 
       {/* <Routes>
         <Route path></Route>

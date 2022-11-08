@@ -1,45 +1,62 @@
 import React, {Component} from 'react'
 import * as d3 from 'd3';
 
-class BarChart extends Component {
-    
-    componentDidMount() {
-        this.drawChart()
-    }
+const Map = () => {
 
-    drawChart() {
-        const data = [12,5,6,2,7,9]
-        const svg =  d3.select('.bar').append('svg').attr('width',700).attr('height',300);
-        svg
-            .selectAll('rect') // select all rect objects
-            .data(data) // map data to those objects
-            .enter() // enter inits the data vis
-            .append('rect') // update those rects as data updates in real time
-            .attr('x', (d, i) => i * 70) // map the position of ea. bar by the index of bar * 70, (d,i) inits the map of data to index
-            .attr('y', 0) // keep y pos at 0
-            .attr('width', 25) // set wth and ht
-            .attr('height', (d,i) => d) // map data's values to each bar's height by initing then pulling the d var
-            .attr('fill', 'green') // set inside color to green
-    }
+    // d3 boilerplate
+    // let margin = {top: 0, bottom: 0, left: 0, right: 0},
+    //     height = 400 - margin.top - margin.bottom,
+    //     width = 800 - margin.left - margin.right;
+
+    // create svg object
+    var width = 1280, height = 800;
+
+    var svg = d3.select("#map").append("svg")
+            .attr("width", width)
+            .attr("height", height);
+
+    var projection = d3.geoPath()
+            .azimuthal()
+            .mode("equidistant")
+            .origin([-98, 38])
+            .scale(1500)
+            .translate([640, 360]);
+
+    var path = d3.geoPath()
+            .projection(projection);
+
+    var borough = svg.append("svg:g")
+        .attr("id", "Borough");
+
+    d3.json("NYC_Boroughs.json", function(error, nyc) {
+        if (error) return console.error(error);
+        borough.selectAll("path").data(nyc.features)
+                .enter().append("svg:path")
+                .attr("d",path)
+                .attr("class", function(d){
+                    return "class" + d.id;
+                })
+                .style("fill", function(){
+                    return "hsl(" + Math.random() * 360 + ",60%,30%)";
+                });
+    });
+
+    // test object
+    // let map = d3.select("#map") // select all html objects with ID map
+        // .append("p")
+        // .text("test")
+
+    // read in topojson
+        // d3.json("NYC_Boroughs.json", function (data) {
+        //     console.log(data);
+        //     map.append(data);
+        // });
+        // .await(ready)
+
+    return( 
+        <div id="map">
+        </div>
+    )
 }
 
-/*// Set margins here
-var margin = {top: 0, left: 0, right: 0, bottom: 0},
-    height = 900 - margin.top - margin.bottom;
-    width = 600 - margin.left - margin.right;
-
-// Set svg var
-const svg = 
-
-    // select any items with the class "map"
-    d3.select('.map')
-
-    // Add an svg object to those items, with it's attr's set as listed below
-    .append('svg')
-    .attr('height', height)
-    .attr('width', width)
-
-// Read in data
-d3.queue()*/
-
-export default BarChart;
+export default Map;
