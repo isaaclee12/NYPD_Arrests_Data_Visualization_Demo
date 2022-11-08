@@ -45,7 +45,7 @@ class TestViewSet(viewsets.ModelViewSet):
 
 class BoroughHeatMapViewSet(viewsets.ModelViewSet):
 
-    queryset = BoroughHeatMap.objects.all()
+    queryset = BoroughHeatMap.objects.all().order_by('arrest_date')[:10]
 
     http_method_names = ['get']
 
