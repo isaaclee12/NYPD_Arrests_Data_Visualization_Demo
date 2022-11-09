@@ -6,46 +6,69 @@ const Map = () => {
     const [mapData, setMapData] = useState([]);
 
     useEffect(() => {
-        d3.json("NYC_Boroughs.json") //("https://github.com/HarryBirtles/NYC-Maps-and-Data/blob/master/NYC_Boroughs.topojson")
-        .then((data) => {
-            setMapData(data);
-        })
-        .catch((err) => {
-            console.log("Error when loading map:", err);
-        });
-    }, [])
+        console.log("LOADING")
+        d3.json("Borough_Boundaries.geojson") //("https://github.com/HarryBirtles/NYC-Maps-and-Data/blob/master/NYC_Boroughs.topojson")
+            .then((data) => {
+                setMapData(data);
+                console.log("Map data:", mapData);
+            })
+            .catch((err) => {
+                console.log("Error when loading map:", err);
+            })
+        
+        /*async function fetchJson() {
+            return await d3.json("Borough_Boundaries.geojson") //("https://github.com/HarryBirtles/NYC-Maps-and-Data/blob/master/NYC_Boroughs.topojson")
+        }
+
+        fetchJson().then((data) => {
+                setMapData(data);
+                setTimeout(function(){
+                    console.log("Map data:", mapData);
+                }, 500); 
+            })
+            .catch((err) => {
+                console.log("Error when loading map:", err);
+            });*/
+    }, []);
+
+    // create an svg in all div's with id "map" with a certain width and height
+    const svg = d3.select("#map")
+                .append('svg')
+                .attr('width', 900)
+                .attr('height', 600);
+
+    // create <g>'s in the <svg>'s
+    const g = svg.append('g');
+
+    // Setup the projection:
+    const bounds = d3.geoBounds(mapData.topology);
+    const centerX = d3.sum(bounds, (d) => d[0]) / 2;
+    const centerY = d3.sum(bounds, (d) => d[1]) / 2;
+    const myProjection = d3.geoMercator()
+    .center([centerX, centerY]);
+
+    // Create a geographic path generator and set its projection:
+    const path = d3.geoPath()
+        .projection(myProjection);
+
+    g.selectAll('path')
+        .data(mapData.features)
+        .enter()
+        .append('path')
+        .attr('d', path);
 
 
-    // set up projection stuff for the svg
-    const setMapProjection = function(mapData) {
-        // use the geoAlbers map projection
-        const projection = d3.geoAlbers();
-        // adjust projection to fit area of map canvas
-        projection
-            .precision(0)
-            .rotate([90, 0, 0])
-            .fitExtent(
-            [
-                [0, 0],
-                [960, 480],
-            ],
-            mapData
-            );
-        return projection;
-        };
 
-    //set map data to d3
-    const path = d3.geoPath().projection(setMapProjection(mapData.data));
-
-    console.log(path);
-
-    d3.select("#map")
-    .append(path)
     
+
+    
+
 
     return( 
         <div id="map">
         </div>
+
+        
     )
 }
 
